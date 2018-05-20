@@ -1,4 +1,4 @@
-# gscrapper
+# amz-scrapper-go
 
 ## build & run
 
