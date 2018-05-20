@@ -23,7 +23,7 @@ Content-Type: application/json
 Date: Sun, 20 May 2018 20:59:11 GMT
 Content-Length: 349
 
-[{"url":"https://www.amazon.co.uk/gp/product/1509836071","meta":{"title":"The Fat-Loss Plan: 100 Quick and Easy Recipes with Workouts","price":"£8.49","image":"https://images-na.ssl-images-amazon.com/images/I/51IsTylYiPL._SX382_BO1,204,203,200_.jpg","in_stock":true}},{"url":"https://www.amazon.co.uk/gp/product/1509836072wqe","error":"Not Found"}]
+[{"url":"https://www.amazon.co.uk/gp/product/1509836071","meta":{"title":"The Fat-Loss Plan: 100 Quick and Easy Recipes with Workouts","price":"£8.49","image":"https://images-na.ssl-images-amazon.com/images/I/51IsTylYiPL._SX382_BO1,204,203,200_.jpg","in_stock":true}},{"url":"https://www.amazon.co.uk/gp/product/1509836072","error":"Not Found"}]
 ```
 
 ### async
@@ -41,7 +41,7 @@ Date: Sun, 20 May 2018 21:02:02 GMT
 Content-Length: 0
 ```
 
-GET /:requestID will block until job is done, call to /:requestID will also pop job out of storage, so subsequent calls will return 404
+GET /:requestID will block until job is done
 
 ```bash
 curl -i -X GET http://localhost:8080/request-id
@@ -53,8 +53,10 @@ Content-Type: application/json
 Date: Sun, 20 May 2018 21:02:51 GMT
 Content-Length: 349
 
-[{"url":"https://www.amazon.co.uk/gp/product/1509836071","meta":{"title":"The Fat-Loss Plan: 100 Quick and Easy Recipes with Workouts","price":"£8.49","image":"https://images-na.ssl-images-amazon.com/images/I/51IsTylYiPL._SX382_BO1,204,203,200_.jpg","in_stock":true}},{"url":"https://www.amazon.co.uk/gp/product/1509836072wqe","error":"Not Found"}]
+[{"url":"https://www.amazon.co.uk/gp/product/1509836071","meta":{"title":"The Fat-Loss Plan: 100 Quick and Easy Recipes with Workouts","price":"£8.49","image":"https://images-na.ssl-images-amazon.com/images/I/51IsTylYiPL._SX382_BO1,204,203,200_.jpg","in_stock":true}},{"url":"https://www.amazon.co.uk/gp/product/1509836072","error":"Not Found"}]
 ```
+
+call to /:requestID will also pop job out of storage, so subsequent call will return 404
 
 ```bash
 curl -i -X GET http://localhost:8080/request-id
